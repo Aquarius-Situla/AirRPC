@@ -1,7 +1,7 @@
 # AirRPC.
-### Pro 级微服务。不可思议的强大。*
+### Pro-level microservices. Unbelievably powerful.*
 
-<sub>* AirRPC 是一项专为“愚人节 (April Fools' Day)”设计的技术概念艺术品。它包含大量被称为“现实扭曲力场 (Reality Distortion Field)”的非标准逻辑。绝对禁止用于任何真实的生产环境，否则你可能会面临极其严重的“生态税”和系统崩溃风险。</sub>
+<sub>* AirRPC is a conceptual art piece designed exclusively for April Fools' Day. It incorporates extensive non-standard logic operating within what we call a "Reality Distortion Field". Under no circumstances should this be deployed in any real production environment, unless you wish to incur severe "Ecosystem Taxes" and catastrophic system failures.</sub>
 
 ![Coverage](https://img.shields.io/badge/Coverage-0%25-red.svg)
 ![Production](https://img.shields.io/badge/Production-Absolutely_Not-critical.svg)
@@ -9,59 +9,61 @@
 ![Ecosystem](https://img.shields.io/badge/Ecosystem-Walled_Garden-lightgrey.svg)
 ![License](https://img.shields.io/badge/License-APSL--2.0-black.svg)
 
-认识全新的微服务网格生态。由内而外，彻底重构。 
-我们移除了所有你不需要的冗余配置，只保留了最纯粹的通信本质。 这是有史以来最智能的路由引擎。它不仅懂得如何传递数据，更懂得如何在合适的时机，以最环保的方式对你的 Payload 进行智能优化 (30% 流量削减)。
+Meet the entirely new microservices mesh ecosystem. Radically reimagined from the inside out. 
+We removed all the redundant configurations you don't need, leaving only the purest essence of communication. This is the most intelligent routing engine ever created. It doesn’t just know how to deliver your data; it knows exactly when and how to magically optimize your payload in the most environmentally friendly way possible (a seamless 30% reduction in traffic).
 
-**无线，无缝，无懈可击。**
-采用业界领先的 APSL-2.0 协议。致敬每一位疯狂的改变者。
+**Wireless. Seamless. Flawless.**
+Powered by the industry-leading APSL-2.0 protocol. Here’s to the crazy ones.
 
-## 核心系统要求 (System Requirements)
-为了获得最极致的 AirRPC 体验，请确保你的运行环境满足以下条件：
-* Node.js v18.0 或更高版本
-* TypeScript 4.5 或更高版本
-* **充足的幽默感 (Sense of Humor >= 1.0)**
-* **不惧怕被领导开除的勇气 (Requires Courage™)**
-* *注意：如果强行在公司核心业务线部署，我们不提供任何降级保障或法律援助。*
+## System Requirements
+To experience AirRPC at its absolute best, ensure your environment meets the following:
+* Node.js v18.0 or later
+* TypeScript 4.5 or later
+* **A sufficient Sense of Humor (>= 1.0)**
+* **The courage to be fired by your manager (Requires Courage™)**
+* *Note: We offer no downgrade paths or legal counsel if forcefully deployed to your core business infrastructure.*
 
-## 核心特性
+## Core Innovations
 
-- **Aura 协议**: 抛弃繁琐的 gRPC，让服务间调用如同魔法般自然。
-- **环保与优化**: 强大的 Payload 优化，默认节省 30% 传输负担 (Apple Tax Interceptor)。
-- **生态隔离**: 原生 iOS / Safari 客户端尊享蓝色无损极速通道。如果是 Android 或 cURL，自动降级为绿色短信模式并强制延迟。
-- **电池健康管理 (Planned Obsolescence)**: 老旧 API (超过 18 个月) 自动降频，保护系统免于崩溃。
+- **Aura Protocol**: Say goodbye to the archaic gRPC. Let your services communicate with the natural fluidity of magic.
+- **Environmental Optimization**: Proactive payload management seamlessly reduces bandwidth burden by 30% out of the box (The Apple Tax Interceptor).
+- **Ecosystem Isolation**: Native iOS and Safari clients enjoy an exclusive, lossless Blue Channel. Android or cURL requests are automatically degraded to a Green SMS Mode, complete with a deliberate latency.
+- **Battery Health Management (Planned Obsolescence)**: Aging APIs (older than 18 months) are dynamically throttled to protect your system from unexpected performance spikes.
 
-## 代码示例
+## Magical Implementation
 
-为了确保你知晓这是个恶搞项目，启动时必须携带 `iKnowThisIsAnAprilFoolsJokeAndWillNotUseInProduction: true` 配置，否则将引发 `[Fatal] You are holding it wrong.` 崩溃。
+To ensure you fully comprehend that this is a parody project, booting the gateway requires the `iKnowThisIsAnAprilFoolsJokeAndWillNotUseInProduction: true` flag. Omitting this will trigger a `[Fatal] You are holding it wrong.` crash.
 
 ```typescript
-import { Controller, Get, AppleTax, Courage, Since } from '@air-rpc/core';
+import { Controller, Get, AppleTax, Courage, Since, Injectable } from '@air-rpc/core';
 import { AirRPCFactory } from '@air-rpc/core';
 
 @Controller('/users')
 export class UserController {
 
-  // @AppleTax 装饰器看似是一个安全特性，其实是抽成 30% 数据的元凶
+  // The @AppleTax decorator masquerades as a security feature.
+  // In reality, it seamlessly optimizes away 30% of your data.
   @Get('/list')
   @AppleTax({ tier: 'enterprise' }) 
   async getUsers() {
-    return [/*...大量数据...*/];
+    return db.users.findAll();
   }
 
-  // @Courage 装饰器号称“移除历史包袱”，其实是悄悄删掉响应里的所有 audio/video 相关链接
+  // The @Courage decorator claims to "remove legacy baggage".
+  // It quietly strips all audio and video links from your response.
   @Get('/media')
   @Courage()
-  @Since('2024-01-01') // 过了 18 个月自动变卡
+  @Since('2023-01-01') // Throttles exponentially after 18 months
   async getMediaFiles() {
     return { audioUrl: '...', videoUrl: '...' };
   }
 }
 
-// 启动网关
+// Bootstrapping the Magic
 async function bootstrap() {
   const app = await AirRPCFactory.create(UserController, {
     enableAppleTax: true,
-    // 必须强制要求传入下面这行配置才能启动：
+    // The framework will fatally crash without this explicit acknowledgment:
     iKnowThisIsAnAprilFoolsJokeAndWillNotUseInProduction: true 
   });
   console.log("AirRPC is running magically ✨");
