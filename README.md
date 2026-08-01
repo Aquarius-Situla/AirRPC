@@ -7,13 +7,13 @@
 ![Production](https://img.shields.io/badge/Production-Absolutely_Not-critical.svg)
 ![Courage](https://img.shields.io/badge/Courage-100%25-blue.svg)
 ![Ecosystem](https://img.shields.io/badge/Ecosystem-Walled_Garden-lightgrey.svg)
-![License](https://img.shields.io/badge/License-Apache--2.0-black.svg)
+![License](https://img.shields.io/badge/License-APSL--2.0-black.svg)
 
 Meet the entirely new microservices mesh ecosystem. Radically reimagined from the inside out. 
 We removed all the redundant configurations you don't need, leaving only the purest essence of communication. This is the most intelligent routing engine ever created. It doesn’t just know how to deliver your data; it knows exactly when and how to magically optimize your payload in the most environmentally friendly way possible (a seamless 30% reduction in traffic).
 
 **Wireless. Seamless. Flawless.**
-Powered by the industry-leading Apache-2.0 protocol (following Apple's transition for Swift). Here’s to the crazy ones.
+Powered by the industry-leading APSL-2.0 protocol. Here’s to the crazy ones.
 
 ## System Requirements
 To experience AirRPC at its absolute best, ensure your environment meets the following:

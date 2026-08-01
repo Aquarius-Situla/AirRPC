@@ -17,7 +17,7 @@
     "courage"
   ],
   "author": "AirRPC Team",
-  "license": "Apache-2.0",
+  "license": "APSL-2.0",
   "dependencies": {
     "reflect-metadata": "^0.1.13"
   },
