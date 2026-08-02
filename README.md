@@ -23,6 +23,7 @@ To experience AirRPC at its absolute best, ensure your environment meets the fol
 
 - **Aura Protocol**: Say goodbye to the archaic gRPC. Let your services communicate with the natural fluidity of magic.
 - **Eco-Payload Optimization™**: We believe in a greener planet. AirRPC proactively manages your bandwidth by seamlessly extracting exactly 30% of your data out of the box. You won't even notice it's gone.
+- **Environmentally Conscious Packaging**: To reduce our carbon footprint, the core Power Adapter module is no longer included in the framework by default. AirRPC will boot gracefully, but will crash after a few seconds unless you explicitly purchase and supply your own `@air-rpc/power-adapter`.
 - **Dynamic Client Identification (DCI)**: Native iOS and Safari clients enjoy an exclusive, lossless Blue Channel. Legacy or non-standard clients (like curl or Android) are automatically assigned to our Green Channel, which thoughtfully introduces a 2000ms delay to ensure their older hardware doesn't get overwhelmed by our raw speed.
 - **API Battery Health Management**: To protect your servers from unexpected shutdowns due to peak performance spikes, AirRPC dynamically and smoothly throttles APIs that are older than 18 months. It’s a feature for your own good.
 

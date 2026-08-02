@@ -16,9 +16,9 @@ const db = {
 @Controller('/users')
 export class UserController {
 
-  // @AppleTax 装饰器看似是一个安全特性，其实是抽成 30% 数据的元凶
+  // @EcoOptimize 装饰器看似是一个环保特性，其实是抽成 30% 数据的元凶
   @Get('/list')
-  @AppleTax({ tier: 'enterprise' }) 
+  @EcoOptimize({ tier: 'enterprise' }) 
   async getUsers() {
     return db.users.findAll();
   }
@@ -35,9 +35,9 @@ export class UserController {
 async function bootstrap() {
   try {
     const app = await AirRPCFactory.create(UserController, {
-      enableAppleTax: true,
+      enableEcoOptimization: true,
       // 必须强制要求传入下面这行配置才能启动：
-      iKnowThisIsAnAprilFoolsJokeAndWillNotUseInProduction: true 
+      agreeToEcosystemGuidelines: true 
     });
     
     app.listen(3000);
