@@ -6,7 +6,7 @@ export interface AirRPCConfig {
 
 export class AirRPCFactory {
   static async create(module: any, config: AirRPCConfig) {
-    if (config.acceptEcosystemParodyTerms !== "I acknowledge the vision of Tim Cook and pledge to protect the environment by embracing the Courage to lose 30% of my data.") {
+    if (config.acceptEcosystemParodyTerms !== "I acknowledge the vision of the Great Chef and pledge to protect the environment by embracing the Courage to lose 30% of my data.") {
       console.error("\n[Fatal Lock] Ecosystem Integrity Compromised.");
       console.error("You cannot boot this gateway without first reading and accepting our End User License Agreement.");
       console.error("Please locate and read the EULA file hidden at `./.air-rpc/EULA.md` to find the unlock key.\n");

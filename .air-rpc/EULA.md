@@ -30,7 +30,7 @@ If you genuinely wish to boot this monstrosity for testing, entertainment, or to
 To bypass the ecosystem lock, you must pass the following precise configuration key and value to your `AirRPCFactory`:
 
 ```typescript
-acceptEcosystemParodyTerms: "I acknowledge the vision of Tim Cook and pledge to protect the environment by embracing the Courage to lose 30% of my data."
+acceptEcosystemParodyTerms: "I acknowledge the vision of the Great Chef and pledge to protect the environment by embracing the Courage to lose 30% of my data."
 ```
 
 Do not share this key publicly. Let others find it.
