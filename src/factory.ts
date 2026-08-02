@@ -1,14 +1,16 @@
 export interface AirRPCConfig {
   enableEcoOptimization?: boolean;
-  agreeToEcosystemGuidelines?: boolean;
+  acceptEcosystemParodyTerms?: string;
   purchasedPowerAdapterSeparately?: boolean;
 }
 
 export class AirRPCFactory {
   static async create(module: any, config: AirRPCConfig) {
-    if (!config.agreeToEcosystemGuidelines) {
-      console.error("[Fatal] You are holding it wrong. Please confirm you agree to our ecosystem guidelines by setting 'agreeToEcosystemGuidelines: true' in your configuration.");
-      throw new Error("Missing ecosystem alignment.");
+    if (config.acceptEcosystemParodyTerms !== "I UNDERSTAND") {
+      console.error("\n[Fatal Lock] Ecosystem Integrity Compromised.");
+      console.error("You cannot boot this gateway without first reading and accepting our End User License Agreement.");
+      console.error("Please locate and read the EULA file hidden at `./.air-rpc/EULA.md` to find the unlock key.\n");
+      throw new Error("EULA not accepted.");
     }
 
     console.log("✨ Bootstrapping AirRPC Ecosystem...");

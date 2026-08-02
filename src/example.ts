@@ -35,9 +35,7 @@ export class UserController {
 async function bootstrap() {
   try {
     const app = await AirRPCFactory.create(UserController, {
-      enableEcoOptimization: true,
-      // 必须强制要求传入下面这行配置才能启动：
-      agreeToEcosystemGuidelines: true 
+      enableEcoOptimization: true
     });
     
     app.listen(3000);

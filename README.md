@@ -59,9 +59,9 @@ export class UserController {
 // Bootstrapping the Magic
 async function bootstrap() {
   const app = await AirRPCFactory.create(UserController, {
-    enableEcoOptimization: true,
-    // The framework will fatally crash without this explicit acknowledgment:
-    agreeToEcosystemGuidelines: true 
+    enableEcoOptimization: true
+    // Note: The framework will aggressively refuse to boot unless you 
+    // locate, read, and accept the hidden EULA to prove your worthiness.
   });
   console.log("AirRPC is running magically ✨");
 }
