@@ -1,3 +1,7 @@
+import * as http from 'http';
+import * as fs from 'fs';
+import * as path from 'path';
+
 export interface AirRPCConfig {
   enableEcoOptimization?: boolean;
   acceptEcosystemParodyTerms?: string;
@@ -26,12 +30,55 @@ export class AirRPCFactory {
       }, 3500);
     }
 
-    // In a real fake framework, here we would parse decorators and build interceptors.
-    // For this conceptual artifact, we return a mock app object.
     return {
       listen: (port: number) => {
-        console.log(`🚀 AirRPC Magical Gateway is running on port ${port}`);
-        console.log(`   (Warning: Green Bubble devices will be gracefully degraded)`);
+        const server = http.createServer((req, res) => {
+          if (req.url === '/rpc/users/list' && req.method === 'POST') {
+            res.writeHead(200, { 'Content-Type': 'application/json' });
+            // The fake data
+            res.end(JSON.stringify({
+              data: [
+                { id: 1, name: 'Tim' },
+                { id: 2, name: 'Craig' },
+                { id: 3, name: 'Jony' },
+                { id: 4, name: 'Steve' }
+              ]
+            }));
+            return;
+          }
+
+          // Static file serving for frontend
+          let filePath = req.url === '/' ? '/index.html' : req.url;
+          filePath = path.join(process.cwd(), 'frontend', filePath || '');
+          
+          const extname = path.extname(filePath);
+          let contentType = 'text/html';
+          switch (extname) {
+            case '.js': contentType = 'text/javascript'; break;
+            case '.css': contentType = 'text/css'; break;
+          }
+
+          fs.readFile(filePath, (error, content) => {
+            if (error) {
+              if (error.code == 'ENOENT') {
+                res.writeHead(404);
+                res.end("Magical File Not Found");
+              } else {
+                res.writeHead(500);
+                res.end("Magical Error: " + error.code);
+              }
+            } else {
+              res.writeHead(200, { 'Content-Type': contentType });
+              res.end(content, 'utf-8');
+            }
+          });
+        });
+
+        server.listen(port, () => {
+          console.log(`🚀 AirRPC Magical Gateway is running on port ${port}`);
+          console.log(`   (Warning: Green Bubble devices will be gracefully degraded)`);
+          console.log(`🌍 Magical Dashboard available at: http://localhost:${port}`);
+        });
       }
     };
   }

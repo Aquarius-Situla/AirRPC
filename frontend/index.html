@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AirRPC Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="glass-panel">
+    <h1>AirRPC</h1>
+    <h2>Pro-level microservices. Unbelievably powerful.</h2>
+    <div class="metrics">
+      <div class="metric">
+        <h3>Eco-Optimized Data</h3>
+        <p>30%</p>
+      </div>
+      <div class="metric">
+        <h3>Green Bubbles Throttled</h3>
+        <p id="throttle-count">0</p>
+      </div>
+    </div>
+    <button id="fetch-btn">Call RPC /users/list</button>
+    <div id="result"></div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
